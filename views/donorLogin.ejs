@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/hospitalLogin.css">
+ 
+    <script src="cities.js"></script>
+</head>
+<body>
+    <!-- Section: Design Block -->
+<section class="">
+    <!-- Jumbotron -->
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: white">
+      <div class="container">
+        <div class="row gx-lg-5 align-items-center loginBody">
+
+  
+          <div class="col-lg-6 mb-5 mb-lg-0 ">
+            <div class="card">
+              <div class="card-body py-5 px-md-7 formBody">
+                <h1 class="formHeader">Login</h1>
+                <form class="hospitalForm" method="post" action="/loginDonor">
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                  
+                  
+                  <div class="row">
+                    <div class="form-outline mb-4 formFields" style="width: 75%; padding-left: 10rem;">
+                      <input type="email" id="donorEmail" placeholder="Email" class="form-control" name="email" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-outline mb-4 formFields" style="width: 75%; padding-left: 10rem;">
+                      <input type="password" id="donorPassword" placeholder="Password" class="form-control" name="password" />
+                    </div>
+                  </div>
+                  
+  
+                  <!-- Submit button -->
+                  <div class="hospitalFormButton">
+                  <button type="submit" class="btn btn-primary btn-block mb-4 ">
+                    Login
+                  </button>
+                </div>
+
+                <div class="row loginRedirect">
+                  <div class="col-lg-6 mb-5 mb-lg-0 ">
+                  <div class="form-outline mb-4 " >
+                      <a href="/signUpDonor" style="color: whitesmoke; text-decoration: none;">Not registered yet ?</a>
+                    </div>
+                    
+                  </div>
+                </div>
+
+
+
+                </form>
+                
+              </div>
+              <div class="row ">
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <h1 class="my-5 display-3 fw-bold ls-tight brandName">
+              OrganHub <br />
+            </h1>
+            <h3 class="my-5 display-3 fw-bold ls-tight welcome">Welcome Back !</h3>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->
+  <script language="javascript">print_state("sts");</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

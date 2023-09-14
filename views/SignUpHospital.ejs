@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/hospitalLogin.css">
+ 
+    <script src="cities.js"></script>
+</head>
+<body>
+    <!-- Section: Design Block -->
+<section class="">
+    <!-- Jumbotron -->
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: white">
+      <div class="container">
+        <div class="row gx-lg-5 align-items-center loginBody">
+
+  
+          <div class="col-lg-6 mb-5 mb-lg-0 ">
+            <div class="card">
+              <div class="card-body py-5 px-md-7 formBody">
+                <h1 class="formHeader">Sign Up</h1>
+                <form class="hospitalForm" method="post" action="/SignUpHospital">
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                  
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input name = "hospName" type="text" id="form3Example1" placeholder="Hospital Name" class="form-control" />
+               
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                      <div class="form-outline">
+                        <select onchange="print_city('state', this.selectedIndex);" id="sts" name ="stt" class="form-control" required></select>
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                      <div class="form-outline">
+                        <select id ="state" class="form-control" name="city" required></select>
+                        
+              
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input name = "town" type="text" id="form3Example1" placeholder="Town/Village" class="form-control" />
+               
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                      <div class="form-outline">
+                        <input name = "hospitalAddress" type="text" id="form3Example1" placeholder="Address" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                      <div class="form-outline">
+                        <input name = "pincode" type="text" id="form3Example1" placeholder="Pin Code" class="form-control" />
+                        
+              
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="tel" id="hospitalContactNo" placeholder="Contact No." class="form-control" name="contactNo" />
+               
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                      <div class="form-outline">
+                        <input type="email" id="hospitalEmail" placeholder="Email" class="form-control" name="email" />
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="hospitalWebsite" placeholder="Website" class="form-control" name="hospitalWebsite" />
+                      </div>
+                    </div>
+                   
+
+                  </div>
+                  <div class="row">
+                    <div class="form-outline mb-4 formFields" style="width: 75%; padding-left: 10rem;" >
+                      <input type="text" id="hospitalLogo" placeholder="Link of Hospital Logo" class="form-control" name="hospitalLogo" />
+                    </div>
+                  </div>
+
+
+                  <h4 class="subHeading">Nodal Officer's Details</h4>
+                  <div class="row" >
+                    <div class="col-md-2 mb-4 formFields" style="margin-left: 7rem;">
+                      <select name="title" class="form-control">
+                        <option value="Mr."> Mr.</option>
+                        <option value="Mrs."> Mrs.</option>
+                        <option value="Miss"> Miss</option>
+                        <option value="Ms."> Ms.</option>
+                        <option value="Dr."> Dr.</option>
+                        </select>
+                     
+                    </div>
+                    <div class="col-md-6 mb-4 formFields">
+                      <div class="form-outline "> 
+                        <input type="text"  id="nodalOfficerName" placeholder="Full Name" class="form-control"  name="fName"/>
+               
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-outline mb-4 formFields" style="width: 75%; padding-left: 10rem;" >
+                      <input type="text" id="nodalOfficerSpecialization" placeholder="Specialization" class="form-control" name="specialization" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-outline mb-4 formFields" style="width: 75%; padding-left: 10rem;" >
+                      <input type="tel" id="nodalOfficerAddress" placeholder="Address" class="form-control" name="nodalOfficerAddress" />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="form-outline mb-4 formFields" style="width: 75%; padding-left: 10rem;" >
+                      <input type="tel" id="nodalOfficerContactNo" placeholder="Contact No." class="form-control" name="nodalOfficerContactNo" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-outline mb-4 formFields" style="width: 75%; padding-left: 10rem; ">
+                      <input type="email" id="nodalOfficerEmail" placeholder="Email" class="form-control" name="nodalOfficerEmail" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-outline mb-4 formFields" style="width: 75%; padding-left: 10rem;">
+                      <input type="password" id="hospitalPassword" placeholder="Password" class="form-control" name = "password" />
+                    </div>
+                  </div>
+
+
+                  
+  
+                  <!-- Submit button -->
+                  <div class="hospitalFormButton">
+                  <button type="submit" class="btn btn-primary btn-block mb-4 ">
+                    Sign up
+                  </button>
+                </div>
+
+                <div class="row loginRedirect">
+                  <div class="col-lg-6 mb-5 mb-lg-0 ">
+                  <div class="form-outline mb-4 " >
+                      <a href="/loginHospital" style="color: whitesmoke; text-decoration: none;">Already have an account ?</a>
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <div class="col-md-12 mb-4 formFooter">
+                  <p>Please fill in the details as can be validated by a government ID.</p>
+                  <p>Wrong details could lead to termination of registration and legal repercussions.</p>
+                </div>
+
+                </form>
+                
+              </div>
+              <div class="row ">
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <h1 class="my-5 display-3 fw-bold ls-tight brandName">
+              OrganHub <br />
+            </h1>
+            <!-- <img src="/images/Group 31.png" style="size: ;" alt=""> -->
+            <h3 class="my-5 display-3 fw-bold ls-tight welcome">Welcomes You !</h3>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+
+ 
+
+
+  <!-- Section: Design Block -->
+  <script language="javascript">print_state("sts");</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

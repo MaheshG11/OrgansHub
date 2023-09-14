@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="css/hospitalProfile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <%if(foundHospital!=null){%>
+        <%foundHospital.forEach(function(hospital){%>
+            <%console.log(hospital.email)%>
+            <%console.log(email)%>
+            <%if(String(hospital.email)=== String(email)){%>
+                
+            
+            <div class="container emp-profile">
+                <form method="post">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="profile-img">
+                                <img src= "<%=hospital.HospitalLogo%>" alt=""/>
+                                <div class="file btn btn-lg btn-primary">
+                                    Change Photo
+                                    <input type="file" name="file"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 hospitalName">
+                            <div class="profile-head">
+                                        <h5>
+                                            <%=hospital.hospitalName%>
+                                        </h5>
+                                        <p class="proile-rating">REGD : <span>ABG523MH</span></p>
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a onclick="myFunction2()" class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Contact Details</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a onclick="myFunction()"  class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Nodal Officer Details</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="profile-work">
+                                <p>LINKS</p>
+                                <a href="">Hospital Website</a><br/>
+                                <a href="">National Health Portal</a><br/>
+                                <!-- <a href=""></a> -->
+                                <p>SPECIALITIES</p>
+                                <a href="">Emergency and Trauma</a><br/>
+                                <a href="">Dialysis Unit</a><br/>
+                                <a href="">Laparoscopic Surgery</a><br/>
+                                <a href="">Kidney Transplant</a><br/>
+                                <a href="">Vascular Surgery</a><br/>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="tab-content profile-tab" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Hospital Id</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>7433081</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Address</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p><%=hospital.Address%></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>State</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p><%=hospital.state%></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>City</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p><%=hospital.city%></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Town/Village</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p><%=hospital.town%></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Pin Code</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p><%=hospital.PinCode%></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Email</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p><%=hospital.email%></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Phone</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p><%=hospital.contactNo%></p>
+                                                </div>
+                                            </div>
+                        
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Name</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p><%=hospital.offName%></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Specialisation</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p><%=hospital.Specialization%></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Address</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p><%=hospital.AddressOfficer%> </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Phone</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p><%=hospital.contactNoOfficer%></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Email</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p><%=hospital.emailOfficer%></p>
+                                                </div>
+                                            </div>
+        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>           
+            </div>
+            <%}%>
+        <%})%>
+    <%}%>
+    
+
+
+</body>
+<script src="https://kit.fontawesome.com/cee42972ba.js" crossorigin="anonymous"></script>
+<script src="/hospitalProfile.js"></script>
+
+</html>

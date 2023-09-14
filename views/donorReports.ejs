@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Reports</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/donorReports.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: hsl(248, 48%, 94%);">
+
+    <section id="navbar">
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary donorNavbar">
+            <div class="container-fluid">
+                <!-- <a class="navbar-brand" href="#">OrganHub</a> -->
+                <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+    
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/donorHome">Home</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="/donorForm">Forms</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="/donorReports">Reports</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="/nearYou">Near You</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log out</a>
+                        </li>
+    
+                        <!-- <li class="nav-item"><a class="nav-link" href="#">Sign up</a></li> -->
+    
+                        <li class="nav-item"><a class="nav-link" href="/donorProfile"><i class="fa-solid fa-user fa-xl" style="color: #f2f2f2;"></i> </a></li>
+                           
+                            
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+    </section>
+    <section >
+    <div class="donorReports">
+        <h2 style="text-align: center;margin:4rem;">View Uploaded Reports</h2>
+        <form action="" method="get">
+    <table class="table align-middle mb-0 bg-white table-hover" style="margin:auto">
+        <thead class="bg-light">
+          <tr>
+            <th>Report Name</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%if(foundReport!= null){%>
+            <%foundReport.forEach(function(report){%>
+              <%if(String(report.email)===String(email)){%>
+                <tr>
+                  <td>
+                      <p class="fw-normal mb-1"><%=report.reportName%></p>
+                  </td>
+                  <td>
+                    <p class="fw-normal mb-1"><%=report.date%></p>
+                    <p class="text-muted mb-0"><%=report.time%></p>
+                  </td>
+                  <td>
+                    <a href="<%=report.report%>">
+                      <button type="submit" class="btn btn-link btn-sm btn-rounded">
+                        View
+                      </button>
+                    </a>
+                  </td>
+                </tr>
+                <%};%>
+                <%});%>
+                <%};%>
+          
+          
+        </tbody>
+      </table>
+    </form>
+    </div>
+</section>
+    <div>
+          <div>
+            <div class="row">
+              <div class="mx-auto col-10 col-md-8 col-lg-6">
+                <!-- Form -->
+                <form style="border: solid" class="form-example" action="/Reports" method="post">
+                    <h2 style="text-align: center;margin:4rem;" >Upload Medical Reports</h2>
+                  <!-- Input fields -->
+                  <div class="form-group reportForm">
+                    <input type="text" id="reportName" class="form-control w-50 mb-4 " name="reportName" placeholder="Report Name"/>
+                  </div>
+                  <div class="form-group reportForm">
+                    <input type="date" id="reportDate" placeholder="Date" class="form-control w-25 " name="date"/>
+                    <label for="date" class="mb-4" >Date</label>
+                  </div>
+                  <div class="form-group reportForm">
+                    <input type="time" id="reportTime" placeholder="Time" class="form-control w-25 " name="time"/>
+                    <label for="date" class="mb-4" >Time</label>
+                  </div>
+                  
+                  <div class="form-group reportForm" >
+                    <input type="text" id="reportLink" class="form-control w-50 mb-4" name="reportLink" placeholder="Add drive link of reports"/>
+                  </div>
+      
+                  <div class="form-group reportForm" >
+                    <button  type="submit" class="btn btn-primary btn-customized mt-4 mb-4">Upload</button>
+                  </div>
+                  
+                </form>
+                <!-- Form end -->
+              </div>
+            </div>
+          </div>
+        
+    </div>
+
+    
+</body>
+<script src="https://kit.fontawesome.com/cee42972ba.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
